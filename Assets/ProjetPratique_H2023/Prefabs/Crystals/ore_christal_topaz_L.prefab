@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4141931516816927228}
   - component: {fileID: 948105494132788200}
   - component: {fileID: 9104710305094187458}
+  - component: {fileID: 2087664622041758268}
   m_Layer: 6
   m_Name: ore_christal_topaz_L
   m_TagString: BlueCrystal
@@ -111,3 +112,21 @@ MonoBehaviour:
   m_CrystalTag: Blue_Crystal_Obj
   m_PartsTag: Blue_Crystal_Parts
   m_InitialPosition: {x: -25, y: 1, z: -20}
+--- !u!114 &2087664622041758268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484831086294698025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.60275805, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

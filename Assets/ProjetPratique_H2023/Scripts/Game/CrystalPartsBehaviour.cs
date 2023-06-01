@@ -45,8 +45,9 @@ public class CrystalPartsBehaviour : MonoBehaviour
         {
             m_DirectionLerpTime += Time.deltaTime;
         }
-        
-        m_Rigidbody.velocity = Vector3.Lerp(m_InitialDirection, playerPosDifference, m_DirectionLerpTime / m_RedirectionTime);
+
+        m_Rigidbody.velocity =
+            Vector3.Lerp(m_InitialDirection, playerPosDifference, m_DirectionLerpTime / m_RedirectionTime);
     }
 
     public void Explode()
@@ -65,6 +66,8 @@ public class CrystalPartsBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             transform.parent.GetComponent<CrystalPartsDestroyer>().m_ChildCollected++;
+           
+            LevelManager.instance.CollectAction?.Invoke(1, m_Color);
             gameObject.SetActive(false);
         }
     }

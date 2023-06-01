@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,9 +16,13 @@ public class CameraFollow : MonoBehaviour
         m_Position = m_Player.position + new Vector3(0, 2, 0);
         m_PosY = 0;
     }
-
-    // Update is called once per frame
+    
     void Update()
+    {
+        
+    }
+
+    private void FixedUpdate()
     {
         m_Position = m_Player.position + new Vector3(0, 2, 0) - m_Offset;
         m_Position.y = m_PosY - m_Offset.y;

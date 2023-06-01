@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.TerrainAPI;
 using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
@@ -8,6 +9,7 @@ public class BulletBehaviour : MonoBehaviour
     [SerializeField] private float m_Speed;
     [SerializeField] private float m_MaxDistance;
     [SerializeField] private string m_DamageTag;
+    [SerializeField] private float m_Damage;
     
     private float m_SpeedMultiplier;
     private Vector3 m_InitialPosition;
@@ -38,8 +40,9 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 11 && m_DamageTag == "Player")
+        if (m_DamageTag == "Player" && other.gameObject.layer == 3)
         {
+            other.gameObject.GetComponent<PlayerStateMachine>().TakeDmg(m_Damage);
             LevelManager.instance.ToggleInactive(gameObject);
         }
     }

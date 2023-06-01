@@ -278,6 +278,7 @@ public class PlayerController : MonoBehaviour
         }
 
         GetDirection();
+        
         if (m_TargetCrystal != null)
         {
             if (m_Direction == Vector3.zero)
@@ -318,12 +319,10 @@ public class PlayerController : MonoBehaviour
             LevelManager.instance.SpellCastAction?.Invoke("Yellow");
         }
 
-        LayerMask groundLayer = 1 << 8;
-
-        m_MouseRay = m_MainCamera.ScreenPointToRay(Input.mousePosition);
-
         if (m_Aiming)
         {
+            LayerMask groundLayer = 1 << 8;
+            m_MouseRay = m_MainCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(m_MouseRay, out m_TargetHit, Mathf.Infinity, groundLayer))
             {
                 if (Time.timeScale == 1.0f)
@@ -576,10 +575,6 @@ public class PlayerController : MonoBehaviour
         {
             m_OutlinedGameObject.GetComponent<AiBehaviour>().GetOutlineComponent().enabled = _state;
             Cursor.SetCursor(m_AttackCursor, Vector2.zero, CursorMode.Auto);
-        }
-        else
-        {
-            
         }
     }
 }

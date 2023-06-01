@@ -75,7 +75,7 @@ public class AiBehaviour : MonoBehaviour
             LevelManager.instance.ToggleInactive(gameObject);
         }
 
-        m_AiCanvas.transform.rotation = player.GetComponent<PlayerController>().m_PlayerCanvas.transform.rotation;
+        m_AiCanvas.transform.rotation = player.GetComponent<PlayerStateMachine>().m_PlayerCanvas.transform.rotation;
     }
 
     private void OnEnable()
